@@ -24,7 +24,8 @@ var renderer = new THREE.WebGLRenderer();
 var scene = new THREE.Scene();
  // カメラを作成
 var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  // カメラコントローラーを作成
+camera.position.set(0, 0, 1000);
+ // カメラコントローラーを作成
 const controls = new OrbitControls(camera, canvasElement);
  // 平行光源
 var directionalLight = new THREE.DirectionalLight(0xffffff);
