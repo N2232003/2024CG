@@ -29,17 +29,6 @@
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
-        
-        // 平行光源1
-        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-        directionalLight1.position.set(10, 10, 10);
-        // シーンに追加
-        scene.add(directionalLight1);
-        // 平行光源2
-        var directionalLight2 = new THREE.DirectionalLight(0x888888);
-        directionalLight2.position.set(-10, -10, 10);
-        // シーンに追加
-        scene.add(directionalLight2);
 
         // helper
         const gridHelper = new THREE.GridHelper(2,10); // size, step
@@ -48,26 +37,39 @@
         scene.add(axisHelper);
 
         //角柱〜円柱
-        var cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 0.5, 8 );
-        //上の底面の半径、下の底面の半径、高さ、何角柱か
-        var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
-        var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cylinder.position.set( 0, 0, -5 );
-        scene.add( cylinder );
-        update();
+var cylinderGeometry = new THREE.CylinderGeometry( 0.3, 0.5, 1, 8 );
+//上の底面の半径、下の底面の半径、高さ、何角柱か
+var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
+var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+cylinder.position.set( 0, 0, -5 );
+scene.add( cylinder );
 
-        // 毎フレーム時に実行されるループイベントです
-        function update() {
-          // レンダリング
-          renderer.render(scene, camera);
-          requestAnimationFrame(update);
 
-           // 箱を回転させる
-          box.rotation.x += 0.01;
-          box.rotation.y += 0.01;
-
-        }
-      }
+  
+    // 平行光源1
+    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+    directionalLight1.position.set(1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight1);
+    // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+    directionalLight2.position.set(-1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight2);
+  
+    // 初回実行
+    var update = function() {
+      requestAnimationFrame(update);
+  
+      // 箱を回転させる
+      cylinder.rotation.x += 0.01;
+      cylinder.rotation.y += 0.01;
+  
+      renderer.render(scene, camera);
+    };
+    update();
+  }
+  window.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
