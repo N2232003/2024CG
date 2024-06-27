@@ -46,28 +46,37 @@
         //角柱〜円柱
         var sbotGeometry = new THREE.CylinderGeometry( 0.1, 0.07, 0.05, 50);
         var sbotMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
-        var sbot = new THREE.Mesh( sbotGeometry, sbotMaterial );
+        var sbot1 = new THREE.Mesh( sbotGeometry, sbotMaterial );
         sbot1.position.set( 0.25, 0.275, 0.25 );
+        var sbot2 = new THREE.Mesh( sbotGeometry, sbotMaterial );
         sbot2.position.set( 0.25, 0.275, -0.25 );
+        var sbot3 = new THREE.Mesh( sbotGeometry, sbotMaterial );
         sbot3.position.set( -0.25, 0.275, 0.25 );
+        var sbot4 = new THREE.Mesh( sbotGeometry, sbotMaterial );
         sbot4.position.set( -0.25, 0.275, -0.25 );
         
         //角柱〜円柱
         var smidGeometry = new THREE.CylinderGeometry( 0.06, 0.1, 0.15, 50);
         var smidMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
-        var smid = new THREE.Mesh( smidGeometry, smidMaterial );
+        var smid1 = new THREE.Mesh( smidGeometry, smidMaterial );
         smid1.position.set( 0.25, 0.375, 0.25 );
+        var smid2 = new THREE.Mesh( smidGeometry, smidMaterial );
         smid2.position.set( 0.25, 0.375, -0.25 );
+        var smid3 = new THREE.Mesh( smidGeometry, smidMaterial );
         smid3.position.set( -0.25, 0.375, 0.25 );
+        var smid4 = new THREE.Mesh( smidGeometry, smidMaterial );
         smid4.position.set( -0.25, 0.375, -0.25 );
     
         //角柱〜円柱
         var stopGeometry = new THREE.CylinderGeometry( 0.03, 0.06, 0.05, 50);
         var stopMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
-        var stop = new THREE.Mesh( stopGeometry, stopMaterial );
+        var stop1 = new THREE.Mesh( stopGeometry, stopMaterial );
         stop1.position.set( 0.25, 0.475, 0.25 );
+        var stop2 = new THREE.Mesh( stopGeometry, stopMaterial );
         stop2.position.set( 0.25, 0.475, -0.25 );
+        var stop3 = new THREE.Mesh( stopGeometry, stopMaterial );
         stop3.position.set( -0.25, 0.475, 0.25 );
+        var stop4 = new THREE.Mesh( stopGeometry, stopMaterial );
         stop4.position.set( -0.25, 0.475, -0.25 );
       
         const strawberry1 = new THREE.Group()
