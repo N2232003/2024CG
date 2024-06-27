@@ -49,14 +49,12 @@
         var smid = new THREE.Mesh( smidGeometry, smidMaterial );
         smid.position.set( 0, 0.375, 0 );
         
-    
         //いちご上
         var stopGeometry = new THREE.CylinderGeometry( 0.03, 0.06, 0.05, 50);
         var stopMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
         var stop = new THREE.Mesh( stopGeometry, stopMaterial );
         stop.position.set( 0, 0.475, 0 );
        
-      
         const hall = new THREE.Group()
         hall.add(sbot);
         hall.add(smid);
@@ -64,8 +62,7 @@
         hall.add(cake);
         hall.position.set(0,0,0);
         scene.add(hall); 
-
-  
+        
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
     directionalLight1.position.set(1, 1, 1);
