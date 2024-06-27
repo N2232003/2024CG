@@ -40,7 +40,7 @@
         var cakeGeometry = new THREE.CylinderGeometry( 1, 1, 0.5, 50);
         var cakeMaterial = new THREE.MeshPhongMaterial( {color: 0xffffff} );
         var cake = new THREE.Mesh( cakeGeometry, cakeMaterial );
-        cake.position.set( 0, 0, 0 );
+        //cake.position.set( 0, 0, 0 );
         //scene.add( cake );
 
         //角柱〜円柱
@@ -103,7 +103,7 @@
     var update = function() {
     requestAnimationFrame(update);
       // 箱を回転させる
-      cake.rotation.y += 0.01;
+      //cake.rotation.y += 0.01;
   
       renderer.render(scene, camera);
     };
