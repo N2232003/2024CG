@@ -28,6 +28,12 @@ var init = function() {
     
     // カメラコントローラーを作成
     //var controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+    // helper
+    const gridHelper = new THREE.GridHelper(3,10); // size, step
+    scene.add(gridHelper);
+    const axisHelper = new THREE.AxisHelper(2); //軸の長さ X：赤、Y：緑、z：青
+    scene.add(axisHelper);
     
     // 平行光源
     var directionalLight = new THREE.DirectionalLight(0xffffff);
