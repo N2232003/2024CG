@@ -46,13 +46,7 @@ var geometry = new THREE.BoxGeometry(1, 1, 1);
 // 初回実行
 var update = function() {
  requestAnimationFrame(update);
- // 箱を回転させる
-box.rotation.x += 0.01;
- box.rotation.y += 0.01;
- renderer.render(scene, camera);
- };
- update()
-}
+
  // 毎フレーム時に実行されるループイベントです
 function tick() {
   // レンダリング
