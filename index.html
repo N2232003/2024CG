@@ -8,6 +8,14 @@
  <!-- <script src="./three.js"></script> -->
  <!-- three.jsを読み込む(CDN) -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+ <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+    }
+  }
+</script>
 </head>
 
 <body>
@@ -23,6 +31,8 @@ var renderer = new THREE.WebGLRenderer();
 var scene = new THREE.Scene();
  // カメラを作成
 var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+  // カメラコントローラーを作成
+const controls = new OrbitControls(camera, canvasElement);
  // 平行光源
 var directionalLight = new THREE.DirectionalLight(0xffffff);
  directionalLight.position.set(1, 1, 1);
