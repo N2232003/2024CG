@@ -8,7 +8,7 @@
  <!-- <script src="./three.js"></script> -->
  <!-- three.jsを読み込む(CDN) -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
- <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+ 
 </head>
 
 <body>
@@ -34,8 +34,6 @@ var geometry = new THREE.BoxGeometry(1, 1, 1);
  var box = new THREE.Mesh(geometry, material);
  box.position.z = -5;
  scene.add(box);
-
-
  // 描画処理
   // 初回実行
 var update = function() {
