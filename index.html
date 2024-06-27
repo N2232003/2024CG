@@ -34,9 +34,10 @@ var init = function() {
     scene.add(directionalLight);
     
     // 箱を作成
-    var geometry = new THREE.BoxGeometry(100, 100, 100);
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
     var box = new THREE.Mesh(geometry, material);
+    box.position.z = -5;
     scene.add(box);
     
     // 描画処理
