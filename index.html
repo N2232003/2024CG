@@ -47,13 +47,13 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
-        // 箱を作成
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
-        var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        var box = new THREE.Mesh(geometry, material);
-        box.position.set(0,0,0); //位置を指定
-        scene.add(box);   // シーンに追加
-
+        //角柱〜円柱
+        var cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 0.5, 8 );
+        //上の底面の半径、下の底面の半径、高さ、何角柱か
+        var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
+        var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        cylinder.position.set( 0, 0, -5 );
+        scene.add( cylinder );
         update();
 
         // 毎フレーム時に実行されるループイベントです
