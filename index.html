@@ -48,6 +48,14 @@ box.rotation.x += 0.01;
  };
  update();
 }
+/ アニメーション処理
+  function animate(){
+    requestAnimationFrame(animate);
+    controls.update();  //制御の更新処理
+    renderer.render(scene, camera);
+  }
+  animate();
+
  window.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
