@@ -67,26 +67,14 @@
         strawberry1.add(sbot);
         strawberry1.add(smid);
         strawberry1.add(stop);
-        strawberry1.position.set(0.3,0,0.3);
+        strawberry1.position.set(0,0,0);
         scene.add(strawberry1); 
-        //const strawberry2 = new THREE.Group()
-        //strawberry2.add(sbot);
-        //strawberry2.add(smid);
-        //strawberry2.add(stop);
-        //strawberry1.position.set(-0.3,0,0.3);
-        //scene.add(strawberry1); 
-        //const strawberry3 = new THREE.Group()
-        //strawberry3.add(sbot);
-        //strawberry3.add(smid);
-        //strawberry3.add(stop);
-        //strawberry3.position.set(0.3,0,-0.3);
-        //scene.add(strawberry3);
-        //const strawberry4 = new THREE.Group()
-        //strawberry4.add(sbot);
-        //strawberry4.add(smid);
-        //strawberry4.add(stop);
-        //strawberry4.position.set(-0.3,0,-0.3);
-        //scene.add(strawberry4); 
+
+        const hall = new THREE.Group()
+        hall.add(cake);
+        hall.add(strawberry);
+        hall.position.set(0,0,0);
+        sense.add(hall);
   
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -103,7 +91,7 @@
     var update = function() {
     requestAnimationFrame(update);
       // 箱を回転させる
-      cake.rotation.y += 0.01;
+      hall.rotation.y += 0.01;
   
       renderer.render(scene, camera);
     };
