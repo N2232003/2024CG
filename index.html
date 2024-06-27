@@ -37,7 +37,7 @@
         scene.add(axisHelper);
 
         //角柱〜円柱
-        var cakeGeometry = new THREE.CylinderGeometry( 1, 1, 0.5, 50);
+        var cakeGeometry = new THREE.CylinderGeometry( 0.8, 0.8, 0.5, 50);
         var cakeMaterial = new THREE.MeshPhongMaterial( {color: 0xffffff} );
         var cake = new THREE.Mesh( cakeGeometry, cakeMaterial );
         cake.position.set( 0, 0, 0 );
@@ -46,45 +46,35 @@
         //角柱〜円柱
         var sbotGeometry = new THREE.CylinderGeometry( 0.1, 0.07, 0.05, 50);
         var sbotMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
-        var sbot1 = new THREE.Mesh( sbotGeometry, sbotMaterial );
-        sbot1.position.set( 0, 0.275, 0 );
-        //var sbot2 = new THREE.Mesh( sbotGeometry, sbotMaterial );
-        //sbot2.position.set( 0.25, 0.275, -0.25 );
-        //var sbot3 = new THREE.Mesh( sbotGeometry, sbotMaterial );
-        //sbot3.position.set( -0.25, 0.275, 0.25 );
-        //var sbot4 = new THREE.Mesh( sbotGeometry, sbotMaterial );
-        //sbot4.position.set( -0.25, 0.275, -0.25 );
+        var sbot = new THREE.Mesh( sbotGeometry, sbotMaterial );
+        sbot.position.set( 0, 0.275, 0 );
         
         //角柱〜円柱
         var smidGeometry = new THREE.CylinderGeometry( 0.06, 0.1, 0.15, 50);
         var smidMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
-        var smid1 = new THREE.Mesh( smidGeometry, smidMaterial );
-        smid1.position.set( 0, 0.375, 0 );
-        //var smid2 = new THREE.Mesh( smidGeometry, smidMaterial );
-        //smid2.position.set( 0.25, 0.375, -0.25 );
-        //var smid3 = new THREE.Mesh( smidGeometry, smidMaterial );
-        //smid3.position.set( -0.25, 0.375, 0.25 );
-        //var smid4 = new THREE.Mesh( smidGeometry, smidMaterial );
-        //smid4.position.set( -0.25, 0.375, -0.25 );
+        var smid = new THREE.Mesh( smidGeometry, smidMaterial );
+        smid.position.set( 0, 0.375, 0 );
+        
     
         //角柱〜円柱
         var stopGeometry = new THREE.CylinderGeometry( 0.03, 0.06, 0.05, 50);
         var stopMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
         var stop1 = new THREE.Mesh( stopGeometry, stopMaterial );
-        stop1.position.set( 0, 0.475, 0 );
-        //var stop2 = new THREE.Mesh( stopGeometry, stopMaterial );
-        //stop2.position.set( 0.25, 0.475, -0.25 );
-        //var stop3 = new THREE.Mesh( stopGeometry, stopMaterial );
-        //stop3.position.set( -0.25, 0.475, 0.25 );
-        //var stop4 = new THREE.Mesh( stopGeometry, stopMaterial );
-        //stop4.position.set( -0.25, 0.475, -0.25 );
+        stop.position.set( 0, 0.475, 0 );
+       
       
-        const strawberry1 = new THREE.Group()
-        strawberry1.add(sbot1);
-        strawberry1.add(smid1);
-        strawberry1.add(stop1);
-        strawberry1.position.set(0.25,0,0.25);
-        scene.add(strawberry1); 
+        const strawberry = new THREE.Group()
+        strawberry.add(sbot);
+        strawberry.add(smid);
+        strawberry.add(stop);
+        strawberry.position.set(0.3,0,0.3);
+        scene.add(strawberry); 
+        strawberry.position.set(-0.3,0,0.3);
+        scene.add(strawberry); 
+        strawberry.position.set(0.3,0,-0.3);
+        scene.add(strawberry); 
+        strawberry.position.set(-0.3,0,-0.3);
+        scene.add(strawberry); 
 
 
   
