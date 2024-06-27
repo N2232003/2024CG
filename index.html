@@ -40,7 +40,7 @@
         var cakeGeometry = new THREE.CylinderGeometry( 1, 1, 0.5, 50);
         var cakeMaterial = new THREE.MeshPhongMaterial( {color: 0xffffff} );
         var cake = new THREE.Mesh( cakeGeometry, cakeMaterial );
-        cylinder.position.set( 0, 0, 0 );
+        cake.position.set( 0, 0, 0 );
         scene.add( cake );
 
         //角柱〜円柱
@@ -69,13 +69,14 @@
         stop2.position.set( 0.25, 0.475, -0.25 );
         stop3.position.set( -0.25, 0.475, 0.25 );
         stop4.position.set( -0.25, 0.475, -0.25 );
+      
+        const strawberry1 = new THREE.Group()
+        strawberry1.add(sbot1);
+        strawberry1.add(smid1);
+        strawberry1.add(stop1);
         strawberry1.position.set(0,0,0);
         scene.add(strawberry1); 
 
-        const strawberry1 = new THREE.Group()
-        strawberry1.add(sbot1);
-        strawberry2.add(smid1);
-        strawberry3.add(stop1);
 
   
     // 平行光源1
