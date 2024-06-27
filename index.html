@@ -63,18 +63,14 @@
         stop.position.set( 0, 0.475, 0 );
        
       
-        const strawberry1 = new THREE.Group()
-        strawberry1.add(sbot);
-        strawberry1.add(smid);
-        strawberry1.add(stop);
-        strawberry1.position.set(0,0,0);
-        scene.add(strawberry1); 
-
         const hall = new THREE.Group()
+        hall.add(sbot);
+        hall.add(smid);
+        hall.add(stop);
         hall.add(cake);
-        hall.add(strawberry);
         hall.position.set(0,0,0);
-        sense.add(hall);
+        scene.add(hall); 
+
   
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -90,7 +86,6 @@
     // 初回実行
     var update = function() {
     requestAnimationFrame(update);
-      // 箱を回転させる
       hall.rotation.y += 0.01;
   
       renderer.render(scene, camera);
