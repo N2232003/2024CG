@@ -30,12 +30,6 @@
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
 
-        // helper
-        const gridHelper = new THREE.GridHelper(2,10); // size, step
-        scene.add(gridHelper);
-        const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
-        scene.add(axisHelper);
-
         //ケーキ
         var cakeGeometry = new THREE.CylinderGeometry( 0.4, 0.4, 0.5, 50);
         var cakeMaterial = new THREE.MeshLamberMaterial( {color: 0xffffff} );
