@@ -107,6 +107,21 @@
     // 初回実行
     var update = function() {
     requestAnimationFrame(update);
+      
+      // アニメーションの設定
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // パーティクルを回転させる
+            particleSystem.rotation.y += 0.002;
+            particleSystem.rotation.x += 0.001;
+
+            // 描画
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    }
   
       renderer.render(scene, camera);
     };
