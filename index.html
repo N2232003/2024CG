@@ -30,6 +30,12 @@
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
 
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();
+        var texture = textureLoader.load("strawberry.png");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+
         //ケーキ
         var cakeGeometry = new THREE.CylinderGeometry( 0.4, 0.4, 0.5, 50);
         var cakeMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff} );
@@ -39,8 +45,9 @@
 
         //いちご下
         var sbotGeometry = new THREE.CylinderGeometry( 0.1, 0.07, 0.05, 50);
-        var sbotMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
-        var sbot = new THREE.Mesh( sbotGeometry, sbotMaterial );
+        //var sbotMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
+        //var sbot = new THREE.Mesh( sbotGeometry, sbotMaterial );
+        var sbot = new THREE.Mesh( sbotGeometry, mat );
         //sbot.position.set( 0, 0.275, 0 );
         
         //いちご中
