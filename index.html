@@ -70,13 +70,28 @@
         hall.position.set(0,0,0);
         scene.add(hall); 
 
-        Var geometry = new THREE.Geometry();
-        geometry.vertices.push(
-          new THREE.Vector3(1,1,1)
-        );
-        var material = new THREE.PointsMaterial( 1, 0x0000ff);
-        var mesh = new THREE.Points(geometry, material);
-        scene.add(mesh);
+         // パーティクルのジオメトリを作成
+        const particles = 10000; // パーティクルの数
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particles * 3);
+
+        for (let i = 0; i < positions.length; i += 3) {
+            positions[i] = (Math.random() * 2 - 1) * 5;   // x座標
+            positions[i + 1] = (Math.random() * 2 - 1) * 5; // y座標
+            positions[i + 2] = (Math.random() * 2 - 1) * 5; // z座標
+        }
+
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+        // パーティクルのマテリアルを作成
+        const material = new THREE.PointsMaterial({
+            color: 0xffffff, // パーティクルの色
+            size: 0.05       // パーティクルのサイズ
+        });
+
+        // パーティクルシステムを作成
+        const particleSystem = new THREE.Points(geometry, material);
+        scene.add(particleSystem);
         
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
