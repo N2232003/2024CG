@@ -45,20 +45,20 @@
 
         //いちご下
         var sbotGeometry = new THREE.CylinderGeometry( 0.1, 0.07, 0.05, 50);
-        //var sbotMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
+        var sbotMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
         //var sbot = new THREE.Mesh( sbotGeometry, sbotMaterial );
         var sbot = new THREE.Mesh( sbotGeometry, mat );
         sbot.position.set( 0, 0.275, 0 );
         
         //いちご中
         var smidGeometry = new THREE.CylinderGeometry( 0.06, 0.1, 0.15, 50);
-        //var smidMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
+        var smidMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
         var smid = new THREE.Mesh( smidGeometry, mat );
         smid.position.set( 0, 0.375, 0 );
         
         //いちご上
         var stopGeometry = new THREE.CylinderGeometry( 0.03, 0.06, 0.05, 50);
-        //var stopMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
+        var stopMaterial = new THREE.MeshPhongMaterial( {color: 0xff0000} );
         var stop = new THREE.Mesh( stopGeometry, mat );
         stop.position.set( 0, 0.475, 0 );
        
